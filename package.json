@@ -1,0 +1,11 @@
+{
+  "name": "proxy-reload",
+  "title": "Reload PAC button",
+  "id": "jid1-BAuVAdBr8gFlOQ",
+  "description": "A button to reload the PAC definitions",
+  "icon": "data/icon-32.png",
+  "icon64": "data/icon-64.png",
+  "author": "Timendum",
+  "license": "GPL 3.0",
+  "version": "0.1"
+}
