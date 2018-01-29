@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "author": "Timendum", 
+    "name": "Reload PAC button",
+    "icons": {
+      "32": "icon-32.png",
+      "64": "icon-64.png"
+    },
+    "browser_action": {
+        "browser_style": true,
+        "default_title": "Reload PAC",
+        "default_icon": {
+            "32": "icon-32.png",
+            "64": "icon-64.png"
+        }
+    },
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "applications": {
+        "gecko": {
+          "id": "jid1-BAuVAdBr8gFlOQ@jetpack",
+          "strict_min_version": "59.0a1"
+        }
+      },
+    "description": "A button to reload the PAC definitions", 
+    "permissions": ["browserSettings"],
+    "version": "0.2"
+}
+
