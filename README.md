@@ -7,7 +7,12 @@ Install the add-on and click the button to refresh the PAC definition.
 
 That's all.
 
-The performed action is similar to the button in Options > Advanced > Network > Connection settings > Reload
+The performed action is similar to:
+
+* change PAC url to a new dummy url
+* set the PAC url to the original value
+
+This trigger the update of the PAC.
 
 ## Attribution ##
 Thanks to [Tango Icon Library][til] for the source icons.
