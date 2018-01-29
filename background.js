@@ -7,14 +7,13 @@ function refreshPac(proxyConfig) {
         proxyConfig.autoConfigUrl = originalUrl;
         if (setResult) {
             return browser.browserSettings.proxyConfig.set({value: proxyConfig});
-        } else {
-            console.log('Temp browserSettings', setResult);
         }
+        console.log('Temp browserSettings', setResult);
     }).catch(console.log);
 }
 
 browser.browserAction.onClicked.addListener(() => {
-    browser.browserSettings.proxyConfig.get({}).then(function(setting) {
+    browser.browserSettings.proxyConfig.get({}).then(function (setting) {
         const proxyConfig = setting.value;
         if (proxyConfig.proxyType !== 'autoConfig') {
             console.log('PAC not enabled in setting');
