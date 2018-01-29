@@ -1,5 +1,5 @@
 function refreshPac(proxyConfig) {
-    // change proxyType to none
+    // change autoConfigUrl to dummy
     const originalUrl = proxyConfig.autoConfigUrl;
     proxyConfig.autoConfigUrl = 'http://example.com/';
     browser.browserSettings.proxyConfig.set({value: proxyConfig}).then(function (setResult) {
