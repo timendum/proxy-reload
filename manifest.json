@@ -20,11 +20,11 @@
     "applications": {
         "gecko": {
           "id": "jid1-BAuVAdBr8gFlOQ@jetpack",
-          "strict_min_version": "59.0a1"
+          "strict_min_version": "60.0a1"
         }
       },
     "description": "A button to reload the PAC definitions", 
-    "permissions": ["browserSettings"],
-    "version": "0.2"
+    "permissions": ["proxy"],
+    "version": "0.2.1"
 }
 
