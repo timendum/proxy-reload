@@ -25,6 +25,6 @@
       },
     "description": "A button to reload the PAC definitions", 
     "permissions": ["proxy"],
-    "version": "0.2.3"
+    "version": "0.3"
 }
 
