@@ -3,8 +3,8 @@ function refreshPac(proxyConfig) {
     console.debug("(proxy-reload) Original config: " + JSON.stringify(proxyConfig));
     const originalUrl = proxyConfig.autoConfigUrl;
     proxyConfig.autoConfigUrl = 'http://proxy-reload.firefox.invalid/proxy.pac';
-    browser.proxy.settings.set({value: proxyConfig}).catch(function(e) {
-        console.error("(proxy-reload) Invalid proxy config found, overwriting (catched: " + e + ")");
+    browser.proxy.settings.set({value: proxyConfig}).catch(function (e) {
+        console.error("(proxy-reload) Invalid proxy config, overwriting (catched: " + e + ")");
         proxyConfig = {
             proxyType: 'autoConfig',
             autoConfigUrl: 'http://example.invalid/',
