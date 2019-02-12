@@ -1,7 +1,7 @@
 function refreshPac(proxyConfig) {
     // change autoConfigUrl to dummy
     const originalUrl = proxyConfig.autoConfigUrl;
-    proxyConfig.autoConfigUrl = 'http://example.com/';
+    proxyConfig.autoConfigUrl = 'http://proxy-reload.firefox.invalid/proxy.pac';
     browser.proxy.settings.set({value: proxyConfig}).then(function (setResult) {
         // rollback
         proxyConfig.autoConfigUrl = originalUrl;
