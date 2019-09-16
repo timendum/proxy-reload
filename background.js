@@ -19,8 +19,15 @@ Click for info.`,
 function refreshPac(proxyConfig) {
     // change autoConfigUrl to dummy
     console.debug("Original config: " + JSON.stringify(proxyConfig));
-    proxyConfig.autoConfigUrl = 'http://proxy-reload.firefox.invalid/proxy.pac';
-    browser.proxy.settings.set({ value: proxyConfig })
+    const dummyConfig = Object.apply(
+        {},
+        proxyConfig,
+        { autoConfigUrl: 'http://proxy-reload.firefox.invalid/proxy.pac' }
+    );
+    browser.proxy.settings.set(
+        {
+            value: dummyConfig
+        })
         .catch((e) => {
             console.error(`Invalid proxy config, overwriting (catched: ${e} )`);
             return browser.proxy.settings.set({
@@ -48,15 +55,15 @@ browser.browserAction.onClicked.addListener(() => {
     checkPrivate().then(() => {
         return browser.proxy.settings.get({});
     })
-    .then((setting) => {
-        const proxyConfig = setting.value;
-        if (proxyConfig.proxyType !== 'autoConfig') {
-            console.log('PAC not enabled in setting');
-            throw new Error('PAC not enabled in setting');
-        } else {
-            return refreshPac(proxyConfig);
-        }
-    });
+        .then((setting) => {
+            const proxyConfig = setting.value;
+            if (proxyConfig.proxyType !== 'autoConfig') {
+                console.log('PAC not enabled in setting');
+                throw new Error('PAC not enabled in setting');
+            } else {
+                return refreshPac(proxyConfig);
+            }
+        });
 });
 
 browser.notifications.onClicked.addListener(() => {
